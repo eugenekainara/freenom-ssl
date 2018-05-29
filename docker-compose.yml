@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  freenom-ssl:
+    image: staryy/freenom-ssl
+    build: ./
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
+    environment:
+      - API_USER=${API_USER}
+      - API_PASSWORD=${API_PASSWORD}
+      - DOMAIN_LIST=${DOMAIN_LIST}
